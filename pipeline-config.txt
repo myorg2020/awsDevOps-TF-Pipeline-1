@@ -5,7 +5,12 @@ In the Previous Project - "awsDevOps-TF-Pipeline" we have created a very simple 
 And once this is setup - we can just simply provision our resources like a S3 bucket, EC2 etc and commit in CodeCommit Repository & CodePipeline will run to Provision the resources.
 
 In this Project, we will learn:
-1. To create three CodeBuild Projects - plan, apply and destroy.
+1. To create three CodeBuild Projects - plan, apply and destroy. Instead having manual terraform commands in the field "Buildspec: Insert build commands, we will provide already created build commands path files which are there in Source code repo to path like - templates/buildspec_plan.yml , templates/buildspec_apply.yml, templates/buildspec_destroy.yml
 2. Create a CodePipeline and execute those three build projects using this CodePipeline.
 3. We are going to use terraform source code in this example as creating EC2 resource. Like above Project we are also going to have a backend s3 bucket for state files, we have to create manually prior doing next steps.
 4. We are also going to have an "approval" stage between apply and destroy. So that before destroy stage runs, it can be Approved.
+5. we will also be creating cloudwatch for each of the Stages (plan, apply, destroy) to store the logs.
+6. Pre-requisites are: 
+   a. create an IAM role which will be used by the CodeBuild Service. Also attach Permissions with AdministratorAcess to this role so that TF can create any resource. And we can select this existing IAM role while creating
+      CodeBuild Projects.
+   b. A s3 bucket for Storing the Artifacts of CodeBuild Projects.
