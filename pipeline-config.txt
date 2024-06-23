@@ -1,0 +1,10 @@
+In the Previous Project - "awsDevOps-TF-Pipeline" we have created a simple terraform cicd pipeline using below.
+1. CodeCommit repository with a simple backend.tf and provider.tf files - with just to have state file in backend S3 bucket.
+2. Created Just One Simple CodeBuild Project (with image & terraform build spec commands) to execute terraform apply for terraform code created in CodeCommit repository.
+3. Create One CodePipeline and connected to CodeCommit repository & CodeBuild Project. And Pipeline just created a state file in S3 backedn bucket.
+And once this is setup - we can just simply provision our resources like a S3 bucket, EC2 etc and commit in CodeCommit Repository & CodePipeline will run to Provision the resources.
+
+In this Project, we will learn:
+1. To create three CodeBuild Projects - plan, apply and destroy.
+2. Create a CodePipeline and execute those three build projects using this CodePipeline.
+3. We are going to have terraform source code in this example as creating EC2 resource.
