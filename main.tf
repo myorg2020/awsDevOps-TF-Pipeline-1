@@ -1,15 +1,3 @@
-terraform {
-  backend "s3" {
-    bucket         = "tf16112023"
-    key            = "terraform.tfstate"
-    region         = "us-east-1"
-  }
-}
-
-provider "aws" {
-  region = var.aws_region
-}
-
 data "aws_ami" "amazon_linux" {
   most_recent = true
   owners      = ["amazon"]
