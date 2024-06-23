@@ -8,4 +8,4 @@ In this Project, we will learn:
 1. To create three CodeBuild Projects - plan, apply and destroy.
 2. Create a CodePipeline and execute those three build projects using this CodePipeline.
 3. We are going to use terraform source code in this example as creating EC2 resource. Like above Project we are also going to have a backend s3 bucket for state files, we have to create manually prior doing next steps.
-4. 
+4. We are also going to have an "approval" stage between apply and destroy. So that before destroy stage runs, it can be Approved.
