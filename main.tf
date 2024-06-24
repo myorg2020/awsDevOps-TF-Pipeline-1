@@ -10,11 +10,11 @@ data "aws_ami" "amazon_linux" {
 
 resource "aws_instance" "example" {
   ami           = data.aws_ami.amazon_linux.id
-  instance_type = var.instance_type
-  key_name      = var.key_name
+  instance_type = "${var.instance_type}"
+  key_name      = "${var.key_name}"
 
   tags = {
-    Name = var.name
+    Name = "${var.name}"
   }
 
   user_data = <<-EOF
