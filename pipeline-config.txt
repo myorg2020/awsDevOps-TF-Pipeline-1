@@ -12,5 +12,6 @@ In this Project, we will learn:
 5. we will also be creating cloudwatch for each of the Stages (plan, apply, destroy) to store the logs.
 6. Pre-requisites are: 
    a. create an IAM role which will be used by the CodeBuild Service. Also attach Permissions with AdministratorAcess to this role so that TF can create any resource. And we can select this existing IAM role while creating
-      CodeBuild Projects.
+      CodeBuild Projects. CodeBuild projects will send permission to terraform for provisioning the resources.
    b. A s3 bucket for Storing the Artifacts of CodeBuild Projects.
+   c. Create a key pair with same name of "key_name" in variables.tf file
